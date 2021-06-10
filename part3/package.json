@@ -1,0 +1,39 @@
+{
+  "name": "full-stack-open-2019-part3-master",
+  "version": "0.0.1",
+  "description": "phonebook backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd ../full-stack-open-2019/part2/phonebook && npm run build --prod && cp -r build ../../../full-stack-open-2019-part3/",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarm111/full-stack-open-2019-part3.git"
+  },
+  "author": "jarm111",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jarm111/full-stack-open-2019-part3/issues"
+  },
+  "homepage": "https://github.com/jarm111/full-stack-open-2019-part3#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.9",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^1.19.4"
+  }
+}
